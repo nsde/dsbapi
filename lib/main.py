@@ -4,14 +4,14 @@ from bs4 import BeautifulSoup
 url = "https://app.dsbcontrol.de/data/9c9bcbc1-132d-442c-bf82-52494b33d947/d08b92ff-6c3e-43e8-8457-6d24f4cb305a/subst_001.htm"
 r = rq.get(url)
 bs = BeautifulSoup(r.text, "lxml")
-found = bs.findAll("td")[3:]
+found = bs.findAll("td")
 
 currentItem = ""
 finalList = []
 currentList = []
 
 for item in found:
-    aboutToPrint = str(item).split(">")
+    aboutToPrint = str(item).split(">") # I sink here is si problem
     aboutToPrint = aboutToPrint[1].replace("</span>", "").replace("</td","").replace('<span style="color: #010101"',"").replace("<b","").replace("\xa0","")
     if aboutToPrint == " " or aboutToPrint == "---" or aboutToPrint == "" or aboutToPrint == "-----":
         pass
