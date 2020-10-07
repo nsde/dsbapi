@@ -12,7 +12,7 @@ currentList = []
 
 for item in found:
     aboutToPrint = str(item).split(">")
-    aboutToPrint = aboutToPrint[1].replace("</span>", "").replace("</td","").replace('<span style="color: #010101"',"").replace("<b","")
+    aboutToPrint = aboutToPrint[1].replace("</span>", "").replace("</td","").replace('<span style="color: #010101"',"").replace("<b","").replace("\xa0","")
     if aboutToPrint == " " or aboutToPrint == "---" or aboutToPrint == "" or aboutToPrint == "-----":
         pass
     
@@ -21,6 +21,7 @@ for item in found:
 
     else:
         if aboutToPrint.startswith("0") or aboutToPrint.startswith("Q") or aboutToPrint == ("EF"):
+            aboutToPrint = aboutToPrint.replace("0","")
             finalList.append(currentList)
             currentList = []
     
