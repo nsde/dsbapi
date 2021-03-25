@@ -1,2 +1,2 @@
 # DSB API
-API für das "Dingitales Schwarzes Brett" DSB Mobile (dsbmobile.de)
+Unofficial API/Scraper for "Digitales Schwarzes Brett"/DSB Mobile (dsbmobile.de)
